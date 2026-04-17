@@ -74,3 +74,9 @@
 2026-04-17T20:40:49.373+04:00  INFO 15272 --- [room] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
 2026-04-17T20:40:49.571+04:00  INFO 15272 --- [room] [http-nio-8080-exec-2] ge.room.room.HomeController              : Home page loaded
 2026-04-17T20:40:49.573+04:00 DEBUG 15272 --- [room] [http-nio-8080-exec-2] ge.room.room.HomeController              : Detailed debug log
+2026-04-17T21:51:40.343+04:00  WARN 15272 --- [room] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m23s733ms862µs600ns).
+2026-04-17T21:55:08.427+04:00  INFO 15272 --- [room] [http-nio-8080-exec-6] ge.room.room.HomeController              : Home page loaded
+2026-04-17T21:55:08.428+04:00 DEBUG 15272 --- [room] [http-nio-8080-exec-6] ge.room.room.HomeController              : Detailed debug log
+2026-04-17T21:55:09.594+04:00  INFO 15272 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Home page loaded
+2026-04-17T21:55:09.595+04:00 DEBUG 15272 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Detailed debug log
+2026-04-17T21:55:11.730+04:00  WARN 15272 --- [room] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m31s386ms940µs400ns).
