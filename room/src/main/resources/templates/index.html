@@ -68,6 +68,36 @@
             <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
           </div>
           <div class="field">
+            <label for="listingType">Property Type</label>
+            <select id="listingType" th:field="*{type}">
+              <option value="">Select type</option>
+              <option value="House">House</option>
+              <option value="Building">Building</option>
+              <option value="Land">Land</option>
+            </select>
+            <small th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></small>
+          </div>
+          <div class="field">
+            <label for="listingCity">City</label>
+            <select id="listingCity" th:field="*{city}">
+              <option value="">Select city</option>
+              <option value="Tbilisi">Tbilisi</option>
+              <option value="Batumi">Batumi</option>
+              <option value="Kutaisi">Kutaisi</option>
+              <option value="Rustavi">Rustavi</option>
+            </select>
+            <small th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></small>
+          </div>
+          <div class="field">
+            <label for="price">Price ($/Month)</label>
+            <input id="price" type="number" min="1" step="1" th:field="*{price}" placeholder="Ex. 1200">
+            <small th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></small>
+          </div>
+          <div class="field">
+            <label for="imageUrl">Image URL (optional)</label>
+            <input id="imageUrl" type="url" th:field="*{imageUrl}" placeholder="https://example.com/image.jpg">
+          </div>
+          <div class="field">
             <label for="file">File</label>
             <input id="file" type="file" th:field="*{file}">
           </div>
@@ -84,10 +114,15 @@
         </div>
         <div id="listingGrid" class="grid">
           <article class="card" th:each="item : ${listings}">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Listing image">
+            <img th:src="${#strings.isEmpty(item.imageUrl) ? 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80' : item.imageUrl}" alt="Listing image">
             <div class="card-content">
+              <div class="meta">
+                <span class="pill" th:text="${item.type}">Type</span>
+                <span class="pill" th:text="${item.city}">City</span>
+              </div>
               <h3 th:text="${item.title}">Listing title</h3>
               <p th:text="${item.description}">Listing description</p>
+              <div class="price" th:text="'$' + ${item.price} + ' / Month'">$0 / Month</div>
             </div>
           </article>
           <p th:if="${#lists.isEmpty(listings)}">No listings yet.</p>

@@ -9,6 +9,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,6 +27,18 @@ public class Listing {
 
     @NotBlank(message = "Description cannot be empty")
     private String description;
+
+    @NotBlank(message = "Type cannot be empty")
+    private String type;
+
+    @NotBlank(message = "City cannot be empty")
+    private String city;
+
+    @NotNull(message = "Price is required")
+    @Positive(message = "Price must be greater than 0")
+    private Double price;
+
+    private String imageUrl;
 
     @Transient
     private MultipartFile file;
@@ -63,6 +77,38 @@ public class Listing {
 
     public void setFile(MultipartFile file) {
         this.file = file;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Owner getOwner() {
