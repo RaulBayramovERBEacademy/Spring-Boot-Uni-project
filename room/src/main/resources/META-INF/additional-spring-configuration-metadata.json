@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "app.info.name",
+      "type": "java.lang.String",
+      "description": "Application display name."
+    },
+    {
+      "name": "app.info.version",
+      "type": "java.lang.String",
+      "description": "Application version."
+    }
+  ]
+}
