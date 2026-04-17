@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Room - Kiralık Emlak</title>
-  <meta name="description" content="Kiralık bina, ev ve arsa ilanları için modern ve sade arayüz.">
+  <title>Room - Rental Properties</title>
+  <meta name="description" content="A modern and clean interface for rental building, house, and land listings.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,74 +15,92 @@
     <div class="container topbar-inner">
       <a class="brand" href="#">Room</a>
       <nav class="nav">
-        <a href="#ilanlar">Ilanlar</a>
-        <a href="#hakkinda">Hakkinda</a>
-        <a href="#iletisim">Iletisim</a>
+        <a href="#listings">Listings</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <button class="btn btn-primary">Ilan Ver</button>
+      <button class="btn btn-primary">Post Listing</button>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <h1>Kiralık Bina, Ev ve Arsa Ilanlari</h1>
-        <p>Sehir merkezinden dogaya uzanan seceneklerle aradigin emlaki kolayca bul.</p>
+        <h1>Rental Building, House, and Land Listings</h1>
+        <p>From city center to nature escapes, find the property you need easily.</p>
 
         <form id="filterForm" class="filter">
           <div class="field">
-            <label for="type">Emlak Tipi</label>
+            <label for="type">Property Type</label>
             <select id="type">
-              <option value="all">Tum Tipler</option>
-              <option value="Ev">Ev</option>
-              <option value="Bina">Bina</option>
-              <option value="Arsa">Arsa</option>
+              <option value="all">All Types</option>
+              <option value="House">House</option>
+              <option value="Building">Building</option>
+              <option value="Land">Land</option>
             </select>
           </div>
           <div class="field">
-            <label for="city">Sehir</label>
+            <label for="city">City</label>
             <select id="city">
-              <option value="all">Tum Sehirler</option>
-              <option value="Tiflis">Tiflis</option>
+              <option value="all">All Cities</option>
+              <option value="Tbilisi">Tbilisi</option>
               <option value="Batumi">Batumi</option>
               <option value="Kutaisi">Kutaisi</option>
               <option value="Rustavi">Rustavi</option>
             </select>
           </div>
           <div class="field">
-            <label for="maxPrice">Maks. Fiyat ($/Ay)</label>
-            <input id="maxPrice" type="number" min="100" step="50" placeholder="Orn. 1200">
+            <label for="maxPrice">Max Price ($/Month)</label>
+            <input id="maxPrice" type="number" min="100" step="50" placeholder="Ex. 1200">
           </div>
-          <button class="btn btn-dark" type="submit">Filtrele</button>
+          <button class="btn btn-dark" type="submit">Filter</button>
+        </form>
+
+        <form th:action="@{/listings}" th:object="${listing}" method="post" enctype="multipart/form-data" class="filter" style="margin-top: 1rem;">
+          <div class="field">
+            <label for="title">Title</label>
+            <input id="title" type="text" th:field="*{title}" placeholder="Minimum 5 characters">
+            <small th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></small>
+          </div>
+          <div class="field">
+            <label for="description">Description</label>
+            <textarea id="description" th:field="*{description}" placeholder="Enter description"></textarea>
+            <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
+          </div>
+          <div class="field">
+            <label for="file">File</label>
+            <input id="file" type="file" th:field="*{file}">
+          </div>
+          <button class="btn btn-primary" type="submit">Create Listing</button>
         </form>
       </div>
     </section>
 
-    <section id="ilanlar" class="listings">
+    <section id="listings" class="listings">
       <div class="container">
         <div class="section-head">
-          <h2>Guncel Ilanlar</h2>
-          <p id="resultText">8 ilan listeleniyor</p>
+          <h2>Latest Listings</h2>
+          <p id="resultText">8 listings shown</p>
         </div>
         <div id="listingGrid" class="grid"></div>
       </div>
     </section>
 
-    <section id="hakkinda" class="about">
+    <section id="about" class="about">
       <div class="container about-inner">
-        <h2>Neden Room?</h2>
+        <h2>Why Room?</h2>
         <div class="badges">
-          <span>Guvenilir Ilanlar</span>
-          <span>Hizli Filtreleme</span>
-          <span>Modern Deneyim</span>
+          <span>Trusted Listings</span>
+          <span>Fast Filtering</span>
+          <span>Modern Experience</span>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="iletisim" class="footer">
+  <footer id="contact" class="footer">
     <div class="container footer-inner">
-      <p>© 2026 Room. Tum haklari saklidir.</p>
+      <p>© 2026 Room. All rights reserved.</p>
       <a href="mailto:info@room.ge">info@room.ge</a>
     </div>
   </footer>

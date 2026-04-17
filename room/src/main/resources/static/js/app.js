@@ -1,73 +1,73 @@
 const listings = [
   {
     id: 1,
-    type: "Ev",
-    city: "Tiflis",
-    title: "Merkezde 2+1 Daire",
-    location: "Saburtalo, Tiflis",
+    type: "House",
+    city: "Tbilisi",
+    title: "2+1 Apartment in the Center",
+    location: "Saburtalo, Tbilisi",
     price: 900,
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 2,
-    type: "Arsa",
+    type: "Land",
     city: "Batumi",
-    title: "Deniz Manzarali Arsa",
+    title: "Sea View Land Plot",
     location: "Makhinjauri, Batumi",
     price: 1200,
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 3,
-    type: "Bina",
+    type: "Building",
     city: "Kutaisi",
-    title: "Ticari Kullanimlik Bina",
+    title: "Commercial Use Building",
     location: "Agmashenebeli, Kutaisi",
     price: 2400,
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 4,
-    type: "Ev",
+    type: "House",
     city: "Batumi",
-    title: "Sahile Yakin 1+1",
+    title: "1+1 Close to the Beach",
     location: "New Boulevard, Batumi",
     price: 760,
     image: "https://images.unsplash.com/photo-1464890100898-a385f744067f?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 5,
-    type: "Arsa",
+    type: "Land",
     city: "Rustavi",
-    title: "Yatirimlik Genis Arsa",
-    location: "Sanayi Bolgesi, Rustavi",
+    title: "Large Investment Land Plot",
+    location: "Industrial Zone, Rustavi",
     price: 680,
     image: "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 6,
-    type: "Bina",
-    city: "Tiflis",
-    title: "Hazir Ofis Binasi",
-    location: "Vake, Tiflis",
+    type: "Building",
+    city: "Tbilisi",
+    title: "Ready Office Building",
+    location: "Vake, Tbilisi",
     price: 3200,
     image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 7,
-    type: "Ev",
+    type: "House",
     city: "Kutaisi",
-    title: "Bahceli Mustakil Ev",
-    location: "Merkez, Kutaisi",
+    title: "Detached House with Garden",
+    location: "Center, Kutaisi",
     price: 1100,
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80"
   },
   {
     id: 8,
-    type: "Arsa",
-    city: "Tiflis",
-    title: "Ana Yola Cephe Arsa",
-    location: "Didi Digomi, Tiflis",
+    type: "Land",
+    city: "Tbilisi",
+    title: "Land Plot on Main Road",
+    location: "Didi Digomi, Tbilisi",
     price: 980,
     image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80"
   }
@@ -82,8 +82,8 @@ const maxPriceInput = document.getElementById("maxPrice");
 
 function renderCards(data) {
   if (!data.length) {
-    listingGrid.innerHTML = "<p>Sonuca uygun ilan bulunamadi.</p>";
-    resultText.textContent = "0 ilan listeleniyor";
+    listingGrid.innerHTML = "<p>No listings found for this filter.</p>";
+    resultText.textContent = "0 listings shown";
     return;
   }
 
@@ -97,12 +97,12 @@ function renderCards(data) {
         </div>
         <h3>${item.title}</h3>
         <p>${item.location}</p>
-        <div class="price">$${item.price} / Ay</div>
+        <div class="price">$${item.price} / Month</div>
       </div>
     </article>
   `).join("");
 
-  resultText.textContent = `${data.length} ilan listeleniyor`;
+  resultText.textContent = `${data.length} listings shown`;
 }
 
 filterForm.addEventListener("submit", (event) => {
