@@ -296,3 +296,7 @@
 2026-04-17T22:33:48.241+04:00  INFO 11620 --- [room] [http-nio-8080-exec-4] ge.room.room.HomeController              : New listing created. id=1, title=dfnyrny yh, file=Picture1.png
 2026-04-17T22:33:48.276+04:00  INFO 11620 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Home page loaded
 2026-04-17T22:33:48.281+04:00 DEBUG 11620 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Detailed debug log
+2026-04-17T22:47:10.433+04:00  INFO 11620 --- [room] [http-nio-8080-exec-9] ge.room.room.HomeController              : Home page loaded
+2026-04-17T22:47:10.434+04:00 DEBUG 11620 --- [room] [http-nio-8080-exec-9] ge.room.room.HomeController              : Detailed debug log
+2026-04-17T22:47:11.543+04:00  INFO 11620 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Home page loaded
+2026-04-17T22:47:11.544+04:00 DEBUG 11620 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Detailed debug log
