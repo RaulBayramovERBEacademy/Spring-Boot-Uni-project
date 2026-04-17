@@ -80,9 +80,18 @@
       <div class="container">
         <div class="section-head">
           <h2>Latest Listings</h2>
-          <p id="resultText">8 listings shown</p>
+          <p id="resultText" th:text="${#lists.size(listings)} + ' listings shown'">0 listings shown</p>
         </div>
-        <div id="listingGrid" class="grid"></div>
+        <div id="listingGrid" class="grid">
+          <article class="card" th:each="item : ${listings}">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Listing image">
+            <div class="card-content">
+              <h3 th:text="${item.title}">Listing title</h3>
+              <p th:text="${item.description}">Listing description</p>
+            </div>
+          </article>
+          <p th:if="${#lists.isEmpty(listings)}">No listings yet.</p>
+        </div>
       </div>
     </section>
 
@@ -105,6 +114,5 @@
     </div>
   </footer>
 
-  <script th:src="@{/js/app.js}"></script>
 </body>
 </html>
