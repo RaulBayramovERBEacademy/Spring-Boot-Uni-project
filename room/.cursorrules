@@ -1,0 +1,33 @@
+# Spring Boot 3 & Java 21 Real Estate Project Rules
+
+## 1. Project Context & Tech Stack
+- **Language:** Java 21 (Use modern features like Records for DTOs if applicable).
+- **Framework:** Spring Boot 3.x
+- **Template Engine:** Thymeleaf (Standard for UI).
+- **Database:** H2 Database (In-memory for Dev, File-based for Prod).
+- **Architecture:** Strict 3-Layer Architecture (Controller -> Service -> Repository).
+
+## 2. Core Constraints (Teacher's Requirements)
+- **Project Structure:** Must be initialized via start.spring.io.
+- **Entities:** Minimum 2 entities (e.g., 'House' and 'Agent').
+- **Relationships:** Implement at least one `@ManyToOne` or `@OneToMany` relationship.
+- **Validation:** Every Form must use at least 2 validation annotations (e.g., `@NotBlank`, `@Min`, `@Size`) and display error messages in Thymeleaf templates.
+- **File Upload:** Implement at least one `<input type="file"/>` using `MultipartFile` in the controller.
+- **REST:** Include at least one `@RestController` for API endpoints.
+
+## 3. Configuration & Profiles
+- **Profile Management:** Use `application-dev.properties` and `application-prod.properties`.
+- **Custom Properties:** Use `@ConfigurationProperties` or `@Value` for at least two custom parameters.
+- **Logging:** - Configure logging levels for the project package.
+    - Enable both Console and File logging in the properties files.
+    - Use `@Slf4j` (Lombok) or `LoggerFactory` for class-level logging.
+
+## 4. Coding Standards
+- **Naming:** PascalCase for classes, camelCase for methods/variables.
+- **Templates:** Store HTML in `src/main/resources/templates` and CSS/Images in `src/main/resources/static`.
+- **Dependency Injection:** Use Constructor Injection instead of `@Autowired` field injection.
+- **Logic:** Business logic MUST stay in the `@Service` layer. Controllers should only handle routing and validation results.
+
+## 5. UI Requirements (Thymeleaf)
+- Use `th:object`, `th:field`, and `th:errors` for form handling.
+- Ensure at least two static assets (one CSS file and one Image) are correctly linked.
