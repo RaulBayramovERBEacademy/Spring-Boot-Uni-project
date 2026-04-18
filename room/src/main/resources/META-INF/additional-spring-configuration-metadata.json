@@ -9,6 +9,11 @@
       "name": "app.info.version",
       "type": "java.lang.String",
       "description": "Application version."
+    },
+    {
+      "name": "room.upload-dir",
+      "type": "java.lang.String",
+      "description": "Directory where uploaded listing images are stored."
     }
   ]
 }
