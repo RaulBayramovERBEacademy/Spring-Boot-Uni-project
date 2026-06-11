@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Room - Rental Properties</title>
-  <meta name="description" content="A modern and clean interface for rental building, house, and land listings.">
+  <title th:text="#{app.title}">Room - Rental Properties</title>
+  <meta name="description" th:content="#{app.description}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,93 +15,106 @@
     <div class="container topbar-inner">
       <a class="brand" href="#">Room</a>
       <nav class="nav">
-        <a href="#listings">Listings</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#listings" th:text="#{nav.listings}">Listings</a>
+        <a href="#about" th:text="#{nav.about}">About</a>
+        <a href="#contact" th:text="#{nav.contact}">Contact</a>
       </nav>
-      <button class="btn btn-primary">Post Listing</button>
+      <div class="topbar-actions">
+        <div class="lang-switcher" th:attr="aria-label=#{nav.language}">
+          <a th:href="@{/(lang=en)}"
+             th:class="${#locale.language == 'en'} ? 'lang-btn active' : 'lang-btn'"
+             th:attr="aria-label=#{nav.lang.en}"
+             th:text="#{nav.lang.en.short}">EN</a>
+          <a th:href="@{/(lang=ka)}"
+             th:class="${#locale.language == 'ka'} ? 'lang-btn active' : 'lang-btn'"
+             th:attr="aria-label=#{nav.lang.ka}"
+             th:text="#{nav.lang.ka.short}">KA</a>
+        </div>
+        <button class="btn btn-primary" th:text="#{nav.postListing}">Post Listing</button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <h1>Rental Building, House, and Land Listings</h1>
-        <p>From city center to nature escapes, find the property you need easily.</p>
+        <h1 th:text="#{hero.title}">Rental Building, House, and Land Listings</h1>
+        <p th:text="#{hero.subtitle}">From city center to nature escapes, find the property you need easily.</p>
 
         <form id="filterForm" class="filter">
           <div class="field">
-            <label for="type">Property Type</label>
+            <label for="type" th:text="#{filter.propertyType}">Property Type</label>
             <select id="type">
-              <option value="all">All Types</option>
-              <option value="House">House</option>
-              <option value="Building">Building</option>
-              <option value="Land">Land</option>
+              <option value="all" th:text="#{filter.allTypes}">All Types</option>
+              <option value="House" th:text="#{property.house}">House</option>
+              <option value="Building" th:text="#{property.building}">Building</option>
+              <option value="Land" th:text="#{property.land}">Land</option>
             </select>
           </div>
           <div class="field">
-            <label for="city">City</label>
+            <label for="city" th:text="#{filter.city}">City</label>
             <select id="city">
-              <option value="all">All Cities</option>
-              <option value="Tbilisi">Tbilisi</option>
-              <option value="Batumi">Batumi</option>
-              <option value="Kutaisi">Kutaisi</option>
-              <option value="Rustavi">Rustavi</option>
+              <option value="all" th:text="#{filter.allCities}">All Cities</option>
+              <option value="Tbilisi" th:text="#{city.tbilisi}">Tbilisi</option>
+              <option value="Batumi" th:text="#{city.batumi}">Batumi</option>
+              <option value="Kutaisi" th:text="#{city.kutaisi}">Kutaisi</option>
+              <option value="Rustavi" th:text="#{city.rustavi}">Rustavi</option>
             </select>
           </div>
           <div class="field">
-            <label for="maxPrice">Max Price ($/Month)</label>
-            <input id="maxPrice" type="number" min="100" step="50" placeholder="Ex. 1200">
+            <label for="maxPrice" th:text="#{filter.maxPrice}">Max Price ($/Month)</label>
+            <input id="maxPrice" type="number" min="100" step="50" th:placeholder="#{filter.maxPrice.placeholder}">
           </div>
-          <button class="btn btn-dark" type="submit">Filter</button>
+          <button class="btn btn-dark" type="submit" th:text="#{filter.submit}">Filter</button>
         </form>
 
         <form th:action="@{/listings}" th:object="${listing}" method="post" enctype="multipart/form-data" class="filter" style="margin-top: 1rem;">
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
           <div class="field">
-            <label for="title">Title</label>
-            <input id="title" type="text" th:field="*{title}" placeholder="Minimum 5 characters">
+            <label for="title" th:text="#{form.title}">Title</label>
+            <input id="title" type="text" th:field="*{title}" th:placeholder="#{form.title.placeholder}">
             <small th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></small>
           </div>
           <div class="field">
-            <label for="description">Description</label>
-            <textarea id="description" th:field="*{description}" placeholder="Enter description"></textarea>
+            <label for="description" th:text="#{form.description}">Description</label>
+            <textarea id="description" th:field="*{description}" th:placeholder="#{form.description.placeholder}"></textarea>
             <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
           </div>
           <div class="field">
-            <label for="listingType">Property Type</label>
+            <label for="listingType" th:text="#{form.propertyType}">Property Type</label>
             <select id="listingType" th:field="*{type}">
-              <option value="">Select type</option>
-              <option value="House">House</option>
-              <option value="Building">Building</option>
-              <option value="Land">Land</option>
+              <option value="" th:text="#{form.selectType}">Select type</option>
+              <option value="House" th:text="#{property.house}">House</option>
+              <option value="Building" th:text="#{property.building}">Building</option>
+              <option value="Land" th:text="#{property.land}">Land</option>
             </select>
             <small th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></small>
           </div>
           <div class="field">
-            <label for="listingCity">City</label>
+            <label for="listingCity" th:text="#{form.city}">City</label>
             <select id="listingCity" th:field="*{city}">
-              <option value="">Select city</option>
-              <option value="Tbilisi">Tbilisi</option>
-              <option value="Batumi">Batumi</option>
-              <option value="Kutaisi">Kutaisi</option>
-              <option value="Rustavi">Rustavi</option>
+              <option value="" th:text="#{form.selectCity}">Select city</option>
+              <option value="Tbilisi" th:text="#{city.tbilisi}">Tbilisi</option>
+              <option value="Batumi" th:text="#{city.batumi}">Batumi</option>
+              <option value="Kutaisi" th:text="#{city.kutaisi}">Kutaisi</option>
+              <option value="Rustavi" th:text="#{city.rustavi}">Rustavi</option>
             </select>
             <small th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></small>
           </div>
           <div class="field">
-            <label for="price">Price ($/Month)</label>
-            <input id="price" type="number" min="1" step="1" th:field="*{price}" placeholder="Ex. 1200">
+            <label for="price" th:text="#{form.price}">Price ($/Month)</label>
+            <input id="price" type="number" min="1" step="1" th:field="*{price}" th:placeholder="#{form.price.placeholder}">
             <small th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></small>
           </div>
           <div class="field">
-            <label for="imageUrl">Image URL (optional)</label>
-            <input id="imageUrl" type="url" th:field="*{imageUrl}" placeholder="https://example.com/image.jpg">
+            <label for="imageUrl" th:text="#{form.imageUrl}">Image URL (optional)</label>
+            <input id="imageUrl" type="url" th:field="*{imageUrl}" th:placeholder="#{form.imageUrl.placeholder}">
           </div>
           <div class="field">
-            <label for="file">File</label>
+            <label for="file" th:text="#{form.file}">File</label>
             <input id="file" type="file" th:field="*{file}">
           </div>
-          <button class="btn btn-primary" type="submit">Create Listing</button>
+          <button class="btn btn-primary" type="submit" th:text="#{form.createListing}">Create Listing</button>
         </form>
       </div>
     </section>
@@ -109,12 +122,12 @@
     <section id="listings" class="listings">
       <div class="container">
         <div class="section-head">
-          <h2>Latest Listings</h2>
-          <p id="resultText" th:text="${#lists.size(listings)} + ' listings shown'">0 listings shown</p>
+          <h2 th:text="#{listings.latest}">Latest Listings</h2>
+          <p id="resultText" th:text="#{listings.count(${#lists.size(listings)})}">0 listings shown</p>
         </div>
         <div id="listingGrid" class="grid">
           <article class="card" th:each="item : ${listings}">
-            <img th:src="${#strings.isEmpty(item.imageUrl) ? 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80' : item.imageUrl}" alt="Listing image">
+            <img th:src="${#strings.isEmpty(item.imageUrl) ? 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80' : item.imageUrl}" th:alt="#{listings.imageAlt}">
             <div class="card-content">
               <div class="meta">
                 <span class="pill" th:text="${item.type}">Type</span>
@@ -122,21 +135,21 @@
               </div>
               <h3 th:text="${item.title}">Listing title</h3>
               <p th:text="${item.description}">Listing description</p>
-              <div class="price" th:text="'$' + ${item.price} + ' / Month'">$0 / Month</div>
+              <div class="price" th:text="#{listings.pricePerMonth(${item.price})}">$0 / Month</div>
             </div>
           </article>
-          <p th:if="${#lists.isEmpty(listings)}">No listings yet.</p>
+          <p th:if="${#lists.isEmpty(listings)}" th:text="#{listings.noListings}">No listings yet.</p>
         </div>
       </div>
     </section>
 
     <section id="about" class="about">
       <div class="container about-inner">
-        <h2>Why Room?</h2>
+        <h2 th:text="#{about.title}">Why Room?</h2>
         <div class="badges">
-          <span>Trusted Listings</span>
-          <span>Fast Filtering</span>
-          <span>Modern Experience</span>
+          <span th:text="#{about.trusted}">Trusted Listings</span>
+          <span th:text="#{about.fast}">Fast Filtering</span>
+          <span th:text="#{about.modern}">Modern Experience</span>
         </div>
       </div>
     </section>
@@ -144,7 +157,7 @@
 
   <footer id="contact" class="footer">
     <div class="container footer-inner">
-      <p>© 2026 Room. All rights reserved.</p>
+      <p th:text="#{footer.copyright}">© 2026 Room. All rights reserved.</p>
       <a href="mailto:info@room.ge">info@room.ge</a>
     </div>
   </footer>
