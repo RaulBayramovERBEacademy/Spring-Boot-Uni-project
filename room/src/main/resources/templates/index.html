@@ -11,14 +11,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom styles must load after Bootstrap so hero layers and z-index win -->
   <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body th:attr="data-show-listing-modal=${showListingModal} ?: false">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top room-navbar">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Room<span class="text-primary">.</span>ge</a>
+    <div class="container room-navbar__inner">
+      <a class="navbar-brand room-brand" href="#">Room<span class="room-brand__dot">.</span>ge</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,7 +30,7 @@
           <li class="nav-item"><a class="nav-link" href="#about" th:text="#{nav.about}">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact" th:text="#{nav.contact}">Contact</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2 room-navbar__actions">
           <div class="lang-switcher" th:attr="aria-label=#{nav.language}">
             <a th:href="@{/(lang=en)}"
                th:class="${#locale.language == 'en'} ? 'lang-btn active' : 'lang-btn'"
@@ -48,58 +49,68 @@
   </nav>
 
   <main>
-    <!-- Hero + Filter -->
-    <section class="hero-premium">
-      <div class="hero-premium__overlay"></div>
-      <div class="container position-relative hero-premium__content text-center text-white">
-        <h1 class="display-4 fw-bold mb-3" th:text="#{hero.title}">Rental Building, House, and Land Listings</h1>
-        <p class="lead hero-premium__subtitle mx-auto" th:text="#{hero.subtitle}">
+    <header class="hero-premium text-center">
+      <div class="hero-premium__media">
+        <div class="hero-premium__image"></div>
+        <div class="hero-premium__gradient"></div>
+        <div class="hero-premium__glow"></div>
+        <div class="hero-premium__grid"></div>
+      </div>
+
+      <div class="container hero-premium__content">
+        <span class="hero-premium__badge">
+          <i class="bi bi-stars"></i>
+          <span th:text="#{hero.badge}">Premium rentals across Georgia</span>
+        </span>
+        <h1 class="hero-premium__title" th:text="#{hero.title}">Rental Building, House, and Land Listings</h1>
+        <p class="hero-premium__subtitle mx-auto" th:text="#{hero.subtitle}">
           From city center to nature escapes, find the property you need easily.
         </p>
       </div>
-      <div class="container hero-filter-container">
-        <form id="filterForm" class="filter-bar card border-0 shadow-lg">
-          <div class="card-body p-4">
-            <div class="row g-3 align-items-end">
-              <div class="col-md-3">
-                <label for="type" class="form-label fw-semibold small text-muted" th:text="#{filter.propertyType}">Property Type</label>
-                <select id="type" class="form-select form-select-lg">
-                  <option value="all" th:text="#{filter.allTypes}">All Types</option>
-                  <option value="House" th:text="#{property.house}">House</option>
-                  <option value="Building" th:text="#{property.building}">Building</option>
-                  <option value="Land" th:text="#{property.land}">Land</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <label for="city" class="form-label fw-semibold small text-muted" th:text="#{filter.city}">City</label>
-                <select id="city" class="form-select form-select-lg">
-                  <option value="all" th:text="#{filter.allCities}">All Cities</option>
-                  <option value="Tbilisi" th:text="#{city.tbilisi}">Tbilisi</option>
-                  <option value="Batumi" th:text="#{city.batumi}">Batumi</option>
-                  <option value="Kutaisi" th:text="#{city.kutaisi}">Kutaisi</option>
-                  <option value="Rustavi" th:text="#{city.rustavi}">Rustavi</option>
-                </select>
-              </div>
-              <div class="col-md-3">
-                <label for="maxPrice" class="form-label fw-semibold small text-muted" th:text="#{filter.maxPrice}">Max Price</label>
-                <input id="maxPrice" type="number" min="100" step="50" class="form-control form-control-lg"
-                       th:placeholder="#{filter.maxPrice.placeholder}">
-              </div>
-              <div class="col-md-3">
-                <button class="btn btn-dark btn-lg w-100" type="submit">
-                  <i class="bi bi-search me-1"></i>
-                  <span th:text="#{filter.submit}">Filter</span>
-                </button>
-              </div>
+    </header>
+
+    <div class="container hero-filter-container">
+      <div class="filter-bar p-4">
+        <form id="filterForm">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-3">
+              <label for="type" class="form-label fw-semibold small text-muted" th:text="#{filter.propertyType}">Property Type</label>
+              <select id="type" class="form-select form-select-lg">
+                <option value="all" th:text="#{filter.allTypes}">All Types</option>
+                <option value="House" th:text="#{property.house}">House</option>
+                <option value="Building" th:text="#{property.building}">Building</option>
+                <option value="Land" th:text="#{property.land}">Land</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="city" class="form-label fw-semibold small text-muted" th:text="#{filter.city}">City</label>
+              <select id="city" class="form-select form-select-lg">
+                <option value="all" th:text="#{filter.allCities}">All Cities</option>
+                <option value="Tbilisi" th:text="#{city.tbilisi}">Tbilisi</option>
+                <option value="Batumi" th:text="#{city.batumi}">Batumi</option>
+                <option value="Kutaisi" th:text="#{city.kutaisi}">Kutaisi</option>
+                <option value="Rustavi" th:text="#{city.rustavi}">Rustavi</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="maxPrice" class="form-label fw-semibold small text-muted" th:text="#{filter.maxPrice}">Max Price</label>
+              <input id="maxPrice" type="number" min="100" step="50" class="form-control form-control-lg"
+                     th:placeholder="#{filter.maxPrice.placeholder}">
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-dark btn-lg w-100" type="submit">
+                <i class="bi bi-search me-1"></i>
+                <span th:text="#{filter.submit}">Filter</span>
+              </button>
             </div>
           </div>
         </form>
       </div>
-    </section>
+    </div>
 
     <!-- Stats Bar -->
     <section class="stats-bar py-4">
-      <div class="container">
+      <div class="container mt-5">
         <div class="row g-3">
           <div class="col-md-4">
             <div class="card stat-card border-0 shadow-sm h-100">
