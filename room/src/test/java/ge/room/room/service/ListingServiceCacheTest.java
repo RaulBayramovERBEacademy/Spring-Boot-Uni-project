@@ -7,14 +7,17 @@ import static org.mockito.Mockito.when;
 
 import ge.room.room.model.Listing;
 import ge.room.room.repository.ListingRepository;
+import ge.room.room.task.ListingReportTask;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 @SpringBootTest
+@TestPropertySource(properties = "spring.task.scheduling.enabled=false")
 class ListingServiceCacheTest {
 
     @Autowired
@@ -22,6 +25,9 @@ class ListingServiceCacheTest {
 
     @MockitoBean
     private ListingRepository listingRepository;
+
+    @MockitoBean
+    private ListingReportTask listingReportTask;
 
     @Test
     void findAll_usesCacheUntilEvicted() {

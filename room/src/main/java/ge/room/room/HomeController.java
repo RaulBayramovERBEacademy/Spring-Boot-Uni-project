@@ -38,7 +38,10 @@ public class HomeController {
         if (!model.containsAttribute("listing")) {
             model.addAttribute("listing", new Listing());
         }
-        model.addAttribute("listings", listingService.findAll());
+        if (!model.containsAttribute("listings")) {
+            model.addAttribute("listings", listingService.findAll());
+        }
+        model.addAttribute("supportedCities", 4);
         logger.info("Home page loaded");
         logger.debug("Detailed debug log");
         return "index";
@@ -48,6 +51,8 @@ public class HomeController {
     public String createListing(@Valid @ModelAttribute("listing") Listing listing, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("listings", listingService.findAll());
+            model.addAttribute("supportedCities", 4);
+            model.addAttribute("showListingModal", true);
             logger.warn("Listing validation failed");
             return "index";
         }
