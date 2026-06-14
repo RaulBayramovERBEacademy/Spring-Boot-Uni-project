@@ -485,3 +485,104 @@
 2026-06-14T19:10:03.424+04:00  INFO 18108 --- [room] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 2026-06-14T19:10:11.603+04:00  INFO 18108 --- [room] [http-nio-8080-exec-1] ge.room.room.HomeController              : Home page loaded
 2026-06-14T19:10:11.603+04:00 DEBUG 18108 --- [room] [http-nio-8080-exec-1] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:16:01.212+04:00  INFO 5168 --- [room] [main] ge.room.room.RoomApplication             : Starting RoomApplication using Java 21.0.9 with PID 5168 (E:\uni\4.2\room_\room\target\classes started by GreeN in E:\uni\4.2\room_)
+2026-06-14T19:16:01.215+04:00 DEBUG 5168 --- [room] [main] ge.room.room.RoomApplication             : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-06-14T19:16:01.217+04:00  INFO 5168 --- [room] [main] ge.room.room.RoomApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-06-14T19:16:02.474+04:00  INFO 5168 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-14T19:16:02.531+04:00  INFO 5168 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+2026-06-14T19:16:03.453+04:00  INFO 5168 --- [room] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-14T19:16:03.469+04:00  INFO 5168 --- [room] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-14T19:16:03.470+04:00  INFO 5168 --- [room] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-06-14T19:16:03.527+04:00  INFO 5168 --- [room] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2256 ms
+2026-06-14T19:16:03.924+04:00  INFO 5168 --- [room] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-14T19:16:03.980+04:00  INFO 5168 --- [room] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-06-14T19:16:04.553+04:00  INFO 5168 --- [room] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-14T19:16:04.595+04:00  INFO 5168 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-14T19:16:04.746+04:00  INFO 5168 --- [room] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:roomdb user=SA
+2026-06-14T19:16:04.748+04:00  INFO 5168 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-14T19:16:04.796+04:00  INFO 5168 --- [room] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:roomdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ROOMDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-14T19:16:05.677+04:00  INFO 5168 --- [room] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-14T19:16:05.749+04:00  INFO 5168 --- [room] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T19:16:05.858+04:00  INFO 5168 --- [room] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-14T19:16:06.061+04:00  INFO 5168 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @Value: name=Room, version=1.0.0
+2026-06-14T19:16:06.062+04:00  INFO 5168 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @ConfigurationProperties: name=Room, version=1.0.0
+2026-06-14T19:16:06.211+04:00  WARN 5168 --- [room] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T19:16:06.510+04:00  INFO 5168 --- [room] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-14T19:16:06.802+04:00  INFO 5168 --- [room] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-14T19:16:07.368+04:00  INFO 5168 --- [room] [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:roomdb'
+2026-06-14T19:16:07.455+04:00  INFO 5168 --- [room] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-14T19:16:07.566+04:00  INFO 5168 --- [room] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-06-14T19:16:07.577+04:00  INFO 5168 --- [room] [main] ge.room.room.RoomApplication             : Started RoomApplication in 6.905 seconds (process running for 7.608)
+2026-06-14T19:16:09.866+04:00  INFO 5168 --- [room] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-14T19:16:09.867+04:00  INFO 5168 --- [room] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-14T19:16:09.870+04:00  INFO 5168 --- [room] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-14T19:16:16.018+04:00  INFO 5168 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Home page loaded
+2026-06-14T19:16:16.018+04:00 DEBUG 5168 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:21:07.587+04:00  INFO 5168 --- [room] [scheduling-1] ge.room.room.task.ListingReportTask      : Scheduled listing report: 0 active listing(s)
+2026-06-14T19:26:07.577+04:00  INFO 5168 --- [room] [scheduling-1] ge.room.room.task.ListingReportTask      : Scheduled listing report: 0 active listing(s)
+2026-06-14T19:32:25.733+04:00  INFO 17248 --- [room] [main] ge.room.room.RoomApplication             : Starting RoomApplication using Java 21.0.9 with PID 17248 (E:\uni\4.2\room_\room\target\classes started by GreeN in E:\uni\4.2\room_)
+2026-06-14T19:32:25.736+04:00 DEBUG 17248 --- [room] [main] ge.room.room.RoomApplication             : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-06-14T19:32:25.736+04:00  INFO 17248 --- [room] [main] ge.room.room.RoomApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-06-14T19:32:26.666+04:00  INFO 17248 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-14T19:32:26.713+04:00  INFO 17248 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2026-06-14T19:32:27.666+04:00  INFO 17248 --- [room] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-14T19:32:27.692+04:00  INFO 17248 --- [room] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-14T19:32:27.693+04:00  INFO 17248 --- [room] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-06-14T19:32:27.806+04:00  INFO 17248 --- [room] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2028 ms
+2026-06-14T19:32:28.358+04:00  INFO 17248 --- [room] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-14T19:32:28.441+04:00  INFO 17248 --- [room] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-06-14T19:32:29.075+04:00  INFO 17248 --- [room] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-14T19:32:29.136+04:00  INFO 17248 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-14T19:32:29.352+04:00  INFO 17248 --- [room] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:roomdb user=SA
+2026-06-14T19:32:29.352+04:00  INFO 17248 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-14T19:32:29.437+04:00  INFO 17248 --- [room] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:roomdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ROOMDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-14T19:32:30.519+04:00  INFO 17248 --- [room] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-14T19:32:30.611+04:00  INFO 17248 --- [room] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T19:32:30.825+04:00  INFO 17248 --- [room] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-14T19:32:31.051+04:00  INFO 17248 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @Value: name=Room, version=1.0.0
+2026-06-14T19:32:31.051+04:00  INFO 17248 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @ConfigurationProperties: name=Room, version=1.0.0
+2026-06-14T19:32:31.188+04:00  WARN 17248 --- [room] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T19:32:31.493+04:00  INFO 17248 --- [room] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-14T19:32:31.953+04:00  INFO 17248 --- [room] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-14T19:32:32.746+04:00  INFO 17248 --- [room] [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:roomdb'
+2026-06-14T19:32:32.970+04:00  INFO 17248 --- [room] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-14T19:32:33.189+04:00  INFO 17248 --- [room] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-06-14T19:32:33.201+04:00  INFO 17248 --- [room] [main] ge.room.room.RoomApplication             : Started RoomApplication in 7.85 seconds (process running for 8.337)
+2026-06-14T19:32:45.318+04:00  INFO 17248 --- [room] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-14T19:32:45.320+04:00  INFO 17248 --- [room] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-14T19:32:45.323+04:00  INFO 17248 --- [room] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-14T19:32:46.602+04:00  INFO 17248 --- [room] [http-nio-8080-exec-1] ge.room.room.HomeController              : Home page loaded
+2026-06-14T19:32:46.603+04:00 DEBUG 17248 --- [room] [http-nio-8080-exec-1] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:34:23.091+04:00  INFO 17248 --- [room] [http-nio-8080-exec-6] ge.room.room.HomeController              : Home page loaded
+2026-06-14T19:34:23.092+04:00 DEBUG 17248 --- [room] [http-nio-8080-exec-6] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:35:20.482+04:00  INFO 17248 --- [room] [http-nio-8080-exec-10] ge.room.room.HomeController              : Home page loaded
+2026-06-14T19:35:20.482+04:00 DEBUG 17248 --- [room] [http-nio-8080-exec-10] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:36:01.351+04:00  INFO 17248 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Home page loaded
+2026-06-14T19:36:01.360+04:00 DEBUG 17248 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:37:33.211+04:00  INFO 17248 --- [room] [scheduling-1] ge.room.room.task.ListingReportTask      : Scheduled listing report: 0 active listing(s)
+2026-06-14T19:40:31.748+04:00  INFO 17248 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Home page loaded
+2026-06-14T19:40:31.749+04:00 DEBUG 17248 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T19:42:33.204+04:00  INFO 17248 --- [room] [scheduling-1] ge.room.room.task.ListingReportTask      : Scheduled listing report: 0 active listing(s)
+2026-06-14T19:47:33.214+04:00  INFO 17248 --- [room] [scheduling-1] ge.room.room.task.ListingReportTask      : Scheduled listing report: 0 active listing(s)

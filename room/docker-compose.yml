@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: room-db
+    environment:
+      POSTGRES_DB: roomdb
+      POSTGRES_USER: room
+      POSTGRES_PASSWORD: room
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U room -d roomdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  app:
+    build: .
+    container_name: room-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/roomdb
+      SPRING_DATASOURCE_USERNAME: room
+      SPRING_DATASOURCE_PASSWORD: room
+      ROOM_SECURITY_USER_PASSWORD: password
+      ROOM_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  uploads_data:
