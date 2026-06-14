@@ -138,3 +138,63 @@
 2026-06-11T18:06:56.125+04:00  INFO 5348 --- [room] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-11T18:06:56.129+04:00  INFO 5348 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-11T18:06:56.132+04:00  INFO 5348 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-11T18:07:21.730+04:00  INFO 15868 --- [room] [main] ge.room.room.RoomApplication             : Starting RoomApplication using Java 21.0.9 with PID 15868 (E:\uni\4.2\room_\room\target\classes started by GreeN in E:\uni\4.2\room_)
+2026-06-11T18:07:21.737+04:00 DEBUG 15868 --- [room] [main] ge.room.room.RoomApplication             : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-06-11T18:07:21.737+04:00  INFO 15868 --- [room] [main] ge.room.room.RoomApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-06-11T18:07:22.477+04:00  INFO 15868 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-11T18:07:22.528+04:00  INFO 15868 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2026-06-11T18:07:23.307+04:00  INFO 15868 --- [room] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-06-11T18:07:23.332+04:00  INFO 15868 --- [room] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-11T18:07:23.332+04:00  INFO 15868 --- [room] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-06-11T18:07:23.423+04:00  INFO 15868 --- [room] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1624 ms
+2026-06-11T18:07:23.669+04:00  INFO 15868 --- [room] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-11T18:07:23.718+04:00  INFO 15868 --- [room] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-06-11T18:07:25.393+04:00  INFO 15868 --- [room] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-11T18:07:25.543+04:00  INFO 15868 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-11T18:07:25.960+04:00  INFO 15868 --- [room] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:roomdb user=SA
+2026-06-11T18:07:25.968+04:00  INFO 15868 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-11T18:07:26.179+04:00  INFO 15868 --- [room] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:roomdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ROOMDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-11T18:07:28.744+04:00  INFO 15868 --- [room] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-11T18:07:29.104+04:00  INFO 15868 --- [room] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-11T18:07:29.883+04:00  INFO 15868 --- [room] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-11T18:07:30.816+04:00  INFO 15868 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @Value: name=Room, version=1.0.0
+2026-06-11T18:07:30.816+04:00  INFO 15868 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @ConfigurationProperties: name=Room, version=1.0.0
+2026-06-11T18:07:31.496+04:00  WARN 15868 --- [room] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-11T18:07:32.371+04:00  INFO 15868 --- [room] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-11T18:07:33.029+04:00  INFO 15868 --- [room] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-11T18:07:33.311+04:00  INFO 15868 --- [room] [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:roomdb'
+2026-06-11T18:07:33.392+04:00  INFO 15868 --- [room] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-06-11T18:07:33.398+04:00  INFO 15868 --- [room] [main] ge.room.room.RoomApplication             : Started RoomApplication in 12.093 seconds (process running for 12.526)
+2026-06-11T18:07:40.357+04:00  INFO 15868 --- [room] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-11T18:07:40.357+04:00  INFO 15868 --- [room] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-11T18:07:40.359+04:00  INFO 15868 --- [room] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-11T18:07:40.910+04:00  INFO 15868 --- [room] [http-nio-8080-exec-2] ge.room.room.HomeController              : Home page loaded
+2026-06-11T18:07:40.910+04:00 DEBUG 15868 --- [room] [http-nio-8080-exec-2] ge.room.room.HomeController              : Detailed debug log
+2026-06-11T18:08:07.877+04:00  INFO 15868 --- [room] [http-nio-8080-exec-6] ge.room.room.HomeController              : Home page loaded
+2026-06-11T18:08:07.877+04:00 DEBUG 15868 --- [room] [http-nio-8080-exec-6] ge.room.room.HomeController              : Detailed debug log
+2026-06-11T18:08:17.132+04:00  INFO 15868 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Home page loaded
+2026-06-11T18:08:17.132+04:00 DEBUG 15868 --- [room] [http-nio-8080-exec-8] ge.room.room.HomeController              : Detailed debug log
+2026-06-11T18:08:22.363+04:00  INFO 15868 --- [room] [http-nio-8080-exec-7] ge.room.room.HomeController              : Home page loaded
+2026-06-11T18:08:22.365+04:00 DEBUG 15868 --- [room] [http-nio-8080-exec-7] ge.room.room.HomeController              : Detailed debug log
+2026-06-11T18:09:12.294+04:00  WARN 15868 --- [room] [http-nio-8080-exec-5] ge.room.room.HomeController              : Listing validation failed
+2026-06-11T18:09:19.030+04:00  WARN 15868 --- [room] [http-nio-8080-exec-10] ge.room.room.HomeController              : Listing validation failed
+2026-06-11T18:09:30.476+04:00  INFO 15868 --- [room] [http-nio-8080-exec-9] ge.room.room.HomeController              : New listing created. id=1, title=fsffff, imageUrl=, file=
+2026-06-11T18:09:30.675+04:00  INFO 15868 --- [room] [http-nio-8080-exec-7] ge.room.room.HomeController              : Home page loaded
+2026-06-11T18:09:30.675+04:00 DEBUG 15868 --- [room] [http-nio-8080-exec-7] ge.room.room.HomeController              : Detailed debug log
+2026-06-11T18:09:54.235+04:00  INFO 15868 --- [room] [http-nio-8080-exec-1] ge.room.room.HomeController              : New listing created. id=2, title=bln;k;ml.ml., imageUrl=/uploads/9164db16-76c8-45c4-8e0a-30c525481d3e.png, file=Screenshot 2025-07-17 140618.png
+2026-06-11T18:09:54.410+04:00  INFO 15868 --- [room] [http-nio-8080-exec-3] ge.room.room.HomeController              : New listing created. id=3, title=bln;k;ml.ml., imageUrl=/uploads/2b227a10-a508-422b-8d23-b1b8f6be2a0d.png, file=Screenshot 2025-07-17 140618.png
+2026-06-11T18:09:54.600+04:00  INFO 15868 --- [room] [http-nio-8080-exec-4] ge.room.room.HomeController              : Home page loaded
+2026-06-11T18:09:54.600+04:00 DEBUG 15868 --- [room] [http-nio-8080-exec-4] ge.room.room.HomeController              : Detailed debug log
+2026-06-11T19:05:07.928+04:00  WARN 15868 --- [room] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m11s460ms232µs100ns).
+2026-06-11T22:57:12.327+04:00  WARN 15868 --- [room] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h52m4s398ms225µs300ns).

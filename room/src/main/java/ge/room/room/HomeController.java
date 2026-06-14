@@ -52,7 +52,7 @@ public class HomeController {
             return "index";
         }
 
-        applyUploadedImage(listing);
+        applyUploadedImage(listing);    
         String fileName = listing.getFile() != null ? listing.getFile().getOriginalFilename() : "no-file";
         Listing savedListing = listingService.save(listing);
         logger.info("New listing created. id={}, title={}, imageUrl={}, file={}",
@@ -88,7 +88,8 @@ public class HomeController {
 
         String ext = originalFilename.substring(originalFilename.lastIndexOf('.')).toLowerCase(Locale.ROOT);
         if (ext.matches("\\.[a-z0-9]{1,8}")) {
-            return ext;
+            return ext; 
+            
         }
         return "";
     }
