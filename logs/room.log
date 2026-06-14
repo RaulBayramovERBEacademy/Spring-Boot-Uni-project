@@ -91,3 +91,5 @@
 2026-06-14T18:28:10.357+04:00 DEBUG 34420 --- [room] [http-nio-8080-exec-1] ge.room.room.HomeController              : Detailed debug log
 2026-06-14T18:28:12.459+04:00  INFO 34420 --- [room] [http-nio-8080-exec-3] ge.room.room.HomeController              : Home page loaded
 2026-06-14T18:28:12.460+04:00 DEBUG 34420 --- [room] [http-nio-8080-exec-3] ge.room.room.HomeController              : Detailed debug log
+2026-06-14T18:31:13.244+04:00  INFO 34420 --- [room] [http-nio-8080-exec-9] ge.room.room.HomeController              : Home page loaded
+2026-06-14T18:31:13.246+04:00 DEBUG 34420 --- [room] [http-nio-8080-exec-9] ge.room.room.HomeController              : Detailed debug log
