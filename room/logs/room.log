@@ -117,3 +117,129 @@
 2026-06-14T18:20:03.225+04:00  INFO 32328 --- [room] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-14T18:20:03.225+04:00  INFO 32328 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
 2026-06-14T18:20:03.241+04:00  INFO 32328 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-06-14T18:26:24.429+04:00  INFO 11576 --- [room] [main] g.room.room.actuator.ActuatorHealthTest  : Starting ActuatorHealthTest using Java 25.0.1 with PID 11576 (started by GreeN in E:\uni\4.2\room_\room)
+2026-06-14T18:26:24.429+04:00 DEBUG 11576 --- [room] [main] g.room.room.actuator.ActuatorHealthTest  : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-06-14T18:26:24.431+04:00  INFO 11576 --- [room] [main] g.room.room.actuator.ActuatorHealthTest  : No active profile set, falling back to 1 default profile: "default"
+2026-06-14T18:26:25.294+04:00  INFO 11576 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-14T18:26:25.349+04:00  INFO 11576 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2026-06-14T18:26:26.155+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-14T18:26:26.198+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-06-14T18:26:26.641+04:00  INFO 11576 --- [room] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-14T18:26:26.668+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-14T18:26:26.813+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:roomdb user=SA
+2026-06-14T18:26:26.814+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-14T18:26:26.857+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:roomdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ROOMDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-14T18:26:27.568+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-14T18:26:27.631+04:00  INFO 11576 --- [room] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:26:27.746+04:00  INFO 11576 --- [room] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-14T18:26:27.877+04:00  INFO 11576 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @Value: name=Room, version=1.0.0
+2026-06-14T18:26:27.877+04:00  INFO 11576 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @ConfigurationProperties: name=Room, version=1.0.0
+2026-06-14T18:26:28.032+04:00  WARN 11576 --- [room] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T18:26:28.300+04:00  INFO 11576 --- [room] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-14T18:26:28.578+04:00  INFO 11576 --- [room] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-14T18:26:28.991+04:00  INFO 11576 --- [room] [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:roomdb'
+2026-06-14T18:26:29.170+04:00  INFO 11576 --- [room] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-06-14T18:26:29.170+04:00  INFO 11576 --- [room] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-06-14T18:26:29.178+04:00  INFO 11576 --- [room] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-14T18:26:29.195+04:00  INFO 11576 --- [room] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 25 ms
+2026-06-14T18:26:29.265+04:00  INFO 11576 --- [room] [main] g.room.room.actuator.ActuatorHealthTest  : Started ActuatorHealthTest in 5.149 seconds (process running for 6.204)
+2026-06-14T18:26:30.454+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.api.ListingSecurityTest]: ListingSecurityTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:30.496+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.api.ListingSecurityTest
+2026-06-14T18:26:30.496+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.api.ListingSecurityTest]: ListingSecurityTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:30.498+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.api.ListingSecurityTest
+2026-06-14T18:26:30.929+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.config.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:30.954+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.config.SecurityConfigTest
+2026-06-14T18:26:30.957+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.config.SecurityConfigTest]: SecurityConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:30.959+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.config.SecurityConfigTest
+2026-06-14T18:26:30.993+04:00  INFO 11576 --- [room] [main] ge.room.room.config.SecurityConfigTest   : Starting SecurityConfigTest using Java 25.0.1 with PID 11576 (started by GreeN in E:\uni\4.2\room_\room)
+2026-06-14T18:26:30.993+04:00 DEBUG 11576 --- [room] [main] ge.room.room.config.SecurityConfigTest   : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-06-14T18:26:30.993+04:00  INFO 11576 --- [room] [main] ge.room.room.config.SecurityConfigTest   : No active profile set, falling back to 1 default profile: "default"
+2026-06-14T18:26:31.284+04:00  INFO 11576 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-14T18:26:31.294+04:00  INFO 11576 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2026-06-14T18:26:31.453+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-14T18:26:31.471+04:00  INFO 11576 --- [room] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-14T18:26:31.472+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-06-14T18:26:31.473+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:roomdb user=SA
+2026-06-14T18:26:31.474+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-06-14T18:26:31.474+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:roomdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ROOMDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-14T18:26:31.511+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-14T18:26:31.517+04:00  INFO 11576 --- [room] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:26:31.571+04:00  INFO 11576 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @Value: name=Room, version=1.0.0
+2026-06-14T18:26:31.571+04:00  INFO 11576 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @ConfigurationProperties: name=Room, version=1.0.0
+2026-06-14T18:26:31.650+04:00  WARN 11576 --- [room] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T18:26:31.827+04:00  INFO 11576 --- [room] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-14T18:26:31.911+04:00  INFO 11576 --- [room] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-14T18:26:32.067+04:00  INFO 11576 --- [room] [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:roomdb'
+2026-06-14T18:26:32.171+04:00  INFO 11576 --- [room] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-14T18:26:32.204+04:00  INFO 11576 --- [room] [main] ge.room.room.config.SecurityConfigTest   : Started SecurityConfigTest in 1.238 seconds (process running for 9.143)
+2026-06-14T18:26:32.432+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.RoomApplicationTests]: RoomApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:32.438+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.RoomApplicationTests
+2026-06-14T18:26:32.440+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.RoomApplicationTests]: RoomApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:32.441+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.RoomApplicationTests
+2026-06-14T18:26:32.462+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.service.ListingServiceCacheTest]: ListingServiceCacheTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:32.470+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.service.ListingServiceCacheTest
+2026-06-14T18:26:32.471+04:00  INFO 11576 --- [room] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [ge.room.room.service.ListingServiceCacheTest]: ListingServiceCacheTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-06-14T18:26:32.471+04:00  INFO 11576 --- [room] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration ge.room.room.RoomApplication for test class ge.room.room.service.ListingServiceCacheTest
+2026-06-14T18:26:32.488+04:00  INFO 11576 --- [room] [main] g.r.r.service.ListingServiceCacheTest    : Starting ListingServiceCacheTest using Java 25.0.1 with PID 11576 (started by GreeN in E:\uni\4.2\room_\room)
+2026-06-14T18:26:32.488+04:00 DEBUG 11576 --- [room] [main] g.r.r.service.ListingServiceCacheTest    : Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-06-14T18:26:32.488+04:00  INFO 11576 --- [room] [main] g.r.r.service.ListingServiceCacheTest    : No active profile set, falling back to 1 default profile: "default"
+2026-06-14T18:26:32.664+04:00  INFO 11576 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-14T18:26:32.671+04:00  INFO 11576 --- [room] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+2026-06-14T18:26:32.885+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-14T18:26:32.899+04:00  INFO 11576 --- [room] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-14T18:26:32.900+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-06-14T18:26:32.901+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:roomdb user=SA
+2026-06-14T18:26:32.901+04:00  INFO 11576 --- [room] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-06-14T18:26:32.902+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:roomdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: ROOMDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-14T18:26:32.925+04:00  INFO 11576 --- [room] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-14T18:26:32.927+04:00  INFO 11576 --- [room] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:26:32.934+04:00  INFO 11576 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @Value: name=Room, version=1.0.0
+2026-06-14T18:26:32.934+04:00  INFO 11576 --- [room] [main] ge.room.room.config.AppInfoReporter      : App info via @ConfigurationProperties: name=Room, version=1.0.0
+2026-06-14T18:26:32.984+04:00  WARN 11576 --- [room] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-14T18:26:33.135+04:00  INFO 11576 --- [room] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-06-14T18:26:33.180+04:00  INFO 11576 --- [room] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-06-14T18:26:33.260+04:00  INFO 11576 --- [room] [main] o.s.b.h.a.H2ConsoleAutoConfiguration     : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:roomdb'
+2026-06-14T18:26:33.305+04:00  INFO 11576 --- [room] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-14T18:26:33.358+04:00  INFO 11576 --- [room] [main] g.r.r.service.ListingServiceCacheTest    : Started ListingServiceCacheTest in 0.884 seconds (process running for 10.297)
+2026-06-14T18:26:33.411+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:26:33.414+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-14T18:26:33.415+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-14T18:26:33.419+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:26:33.420+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-06-14T18:26:33.420+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-06-14T18:26:33.422+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-14T18:26:33.422+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-06-14T18:26:33.424+04:00  INFO 11576 --- [room] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.

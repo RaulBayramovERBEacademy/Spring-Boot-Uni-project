@@ -54,13 +54,15 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/css/**", "/uploads/**", "/h2-console/**").permitAll()
+                        .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
+                        .requestMatchers("/actuator/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/listings", "/api/listings/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/listings").hasRole("USER")
                         .requestMatchers(HttpMethod.DELETE, "/api/listings/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .csrf(csrf -> csrf
-                        .ignoringRequestMatchers("/api/**", "/h2-console/**"))
+                        .ignoringRequestMatchers("/api/**", "/h2-console/**", "/actuator/**"))
                 .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
 
         return http.build();
